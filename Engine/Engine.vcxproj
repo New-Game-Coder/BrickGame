@@ -149,6 +149,7 @@
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="DXErr.cpp" />
     <ClCompile Include="BrickGame.cpp" />
     <ClCompile Include="Graphics.cpp" />

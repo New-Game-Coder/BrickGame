@@ -20,12 +20,22 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "BrickGame.h"
+#include "Brick.h"
 
 BrickGame::BrickGame( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd )
 {
+    int k = 0;
+    for (int i = 0; i < 20; i++)
+    {
+        for (int j = 0; j < 6; j++)
+        {
+            brick[k].__init__(float(200 + i * 20),float (150 + j * 15));
+            k++;
+        }
+    }
 }
 
 void BrickGame::Go()
@@ -38,9 +48,13 @@ void BrickGame::Go()
 
 void BrickGame::UpdateModel()
 {
+
 }
 
 void BrickGame::ComposeFrame()
 {
-	
+    for (int i = 0; i < 120; i++)
+    {
+        brick[i].Draw(gfx);
+    }
 }
