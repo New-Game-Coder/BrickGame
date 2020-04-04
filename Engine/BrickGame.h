@@ -24,6 +24,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Brick.h"
+#include "Platform.h"
 
 class BrickGame
 {
@@ -42,6 +43,7 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
     Brick brick[120];
+    Platform platform;
 	/********************************/
 	/*  User Variables              */
 	/********************************/

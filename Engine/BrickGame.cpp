@@ -28,11 +28,11 @@ BrickGame::BrickGame( MainWindow& wnd )
 	gfx( wnd )
 {
     int k = 0;
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 6; i++)
     {
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j < 20; j++)
         {
-            brick[k].__init__(float(200 + i * 20),float (150 + j * 15));
+            brick[k].__init__(float(200 + j * 20),float (150 + i * 15));
             k++;
         }
     }
@@ -48,13 +48,26 @@ void BrickGame::Go()
 
 void BrickGame::UpdateModel()
 {
-
-}
+    if (wnd.kbd.KeyIsPressed(VK_RIGHT))
+    {
+        platform.moveright();
+    }    
+    platform.clamplatform();
+    if (wnd.kbd.KeyIsPressed(VK_LEFT))
+    {
+        platform.moveleft();
+    }   
+    platform.clamplatform();
+ }
 
 void BrickGame::ComposeFrame()
 {
     for (int i = 0; i < 120; i++)
     {
-        brick[i].Draw(gfx);
+        if (brick[i].getisactive())
+        {
+            brick[i].Draw(gfx);
+        }
     }
+    platform.draw( gfx);
 }

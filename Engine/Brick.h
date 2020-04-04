@@ -6,6 +6,8 @@ class Brick
 public:
 	void __init__(float x, float y);
 	void Draw(Graphics& gfx);	
+	bool getisactive();
+	void setisactive(bool x);
 private:
 	float xt = 0.0f;
 	float yt= 0.0f;

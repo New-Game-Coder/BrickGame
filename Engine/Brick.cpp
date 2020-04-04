@@ -18,3 +18,13 @@ void Brick::Draw(Graphics& gfx)
 		}
 	}
 }
+
+bool Brick::getisactive()
+{
+	return isactive;
+}
+
+void Brick::setisactive( bool x)
+{
+	isactive = x;
+}
